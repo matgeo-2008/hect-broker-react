@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from '../logo.png'
+import { Link } from 'react-router-dom'
 
 class Home extends Component {
     constructor() {
@@ -14,13 +14,10 @@ class Home extends Component {
     }
 
     render() {
-
         return (
             <div>
                 Hello World! <br /><br />
-                <div>
-                    <img src={logo} className="App-logo" alt="CC Logo" />
-                </div>
+                <Link to="/brokerlist">Broker List</Link>
             </div>
         )
     }
