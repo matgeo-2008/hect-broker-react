@@ -7,7 +7,9 @@ class BrokerList extends Component {
         super()
         this.state = {
             brok_list : [],
+            expand : [],
         }
+        this.showDataList = this.showDataList.bind(this)
     }
 
     componentDidMount() {
@@ -20,11 +22,37 @@ class BrokerList extends Component {
         })
     }
 
+    // handleClick(key) {
+    //     if(this.state.expand[key]!=null){
+    //         this.setState({
+    //             expand[key] : !this.state.expand[key],
+    //         })
+    //     } else {
+    //         this.setState({expand[key]: True})
+    //     }
+    // }
+
+    showDataList() {
+        return(
+            <div>
+                {Object.keys(this.state.brok_list).map((key) => 
+                    <ul>
+                        <li>{this.state.brok_list[key].name}</li>
+                    </ul>
+                )}
+            </div>
+        )
+    }
+
     render() {
         console.log(this.state.brok_list[0])
+        let data = this.state.brok_list
+        console.log(data)
         return(
             <div>
                 Hello BrokerList!<br /><br />
+                {this.showDataList()}
+                <br />
                 <Link to="/">Back</Link>
             </div>
         )

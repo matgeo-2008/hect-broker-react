@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home.js';
 import BrokerList from './components/BrokerList.js';
+import BrokerProfile from './components/BrokerProfile.js';
 import logo from './logo.png';
 import './App.css';
 
@@ -18,6 +19,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route path="/brokerlist" component={BrokerList} />
+          <Route path="/brokerprofile" component={BrokerProfile} />
         </div>
         </BrowserRouter>
       </div>
