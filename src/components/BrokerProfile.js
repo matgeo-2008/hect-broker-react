@@ -45,7 +45,8 @@ class BrokerProfile extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/api/broker/?q=2")
+        const { id } = this.props.match.params
+        axios.get("http://127.0.0.1:8000/api/broker/?q=" + id)
         .then(response => {
             this.setState({ 
                 broker : response.data 
@@ -134,7 +135,7 @@ class BrokerProfile extends Component {
                     </Grid>
                 </Grid>
                 <br /><br />
-                <Link to="/">Back</Link>
+                <Link to="/">Home</Link>
             </div>
         )
     }

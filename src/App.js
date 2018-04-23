@@ -12,14 +12,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Hectarex!</h1>
+          <h1 className="App-title">Welcome to HectareX !</h1>
         </header>
         <br />
         <BrowserRouter>
         <div>
           <Route exact path="/" component={Home} />
           <Route path="/brokerlist" component={BrokerList} />
-          <Route path="/brokerprofile" component={BrokerProfile} />
+          <Route path="/brokerprofile/:id" exact component={BrokerProfile} />
         </div>
         </BrowserRouter>
       </div>

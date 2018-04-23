@@ -7,37 +7,29 @@ class BrokerList extends Component {
         super()
         this.state = {
             brok_list : [],
-            expand : [],
         }
         this.showDataList = this.showDataList.bind(this)
     }
 
     componentDidMount() {
         axios.get("http://127.0.0.1:8000/brokerlistapi/")
-        .then(response => response.data)
-        .then(list => {
+        .then(response => {
             this.setState({
-                brok_list: list,
+                brok_list: response.data,
             })
         })
     }
-
-    // handleClick(key) {
-    //     if(this.state.expand[key]!=null){
-    //         this.setState({
-    //             expand[key] : !this.state.expand[key],
-    //         })
-    //     } else {
-    //         this.setState({expand[key]: True})
-    //     }
-    // }
 
     showDataList() {
         return(
             <div>
                 {Object.keys(this.state.brok_list).map((key) => 
                     <ul>
-                        <li>{this.state.brok_list[key].name}</li>
+                        <li>
+                            <Link to={'/brokerprofile/' + this.state.brok_list[key].id}>
+                                {this.state.brok_list[key].name}
+                            </Link>
+                        </li>
                     </ul>
                 )}
             </div>
@@ -53,7 +45,7 @@ class BrokerList extends Component {
                 Hello BrokerList!<br /><br />
                 {this.showDataList()}
                 <br />
-                <Link to="/">Back</Link>
+                <Link to="/">Home</Link>
             </div>
         )
     }

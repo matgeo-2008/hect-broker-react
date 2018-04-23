@@ -18,7 +18,7 @@ class Home extends Component {
             <div>
                 Hello World! <br /><br />
                 <Link to="/brokerlist">Broker List</Link><br /><br />
-                <Link to="/brokerprofile">Broker Profile</Link>
+                <Link to="/brokerprofile/1">Broker Profile</Link>
             </div>
         )
     }
