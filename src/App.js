@@ -3,8 +3,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home.js';
 import BrokerList from './components/BrokerList.js';
 import BrokerProfile from './components/BrokerProfile.js';
+import AddTenant from './components/AddTenant.js';
 import logo from './logo.png';
 import './App.css';
+
 
 class App extends Component {
   render() {
@@ -20,6 +22,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/brokerlist" component={BrokerList} />
           <Route path="/brokerprofile/:id" exact component={BrokerProfile} />
+          <Route path="/addtenant" component={AddTenant} />
         </div>
         </BrowserRouter>
       </div>

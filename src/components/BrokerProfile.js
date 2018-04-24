@@ -11,6 +11,7 @@ import ExpansionPanel, {
 } from 'material-ui/ExpansionPanel'
 import Typography from 'material-ui/Typography'
 import { ExpandMoreIcon } from '../ExpandMoreIcon.png'
+import Button from 'material-ui/Button'
 
 
 const styles = theme => ({
@@ -29,10 +30,17 @@ const styles = theme => ({
         fontWeight: theme.typography.fontWeightRegular,
         color: 'blue',
     },
+    button: {
+        margin: theme.spacing.unit,
+        height: 5,
+    },
+    input: {
+        display: 'none',
+    },
 })
 
 class BrokerProfile extends Component {
-    constructor(){
+    constructor() {
         super()
         this.state = {
             broker : {
@@ -109,8 +117,16 @@ class BrokerProfile extends Component {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Paper className={classes.paper}>
-                        <strong>Tenants</strong><br /><br />
+                            <strong>Tenants</strong><br /><br />
                             {this.otExpansionPanel('tenant')}
+                            <br />
+                            <Link to='/addtenant'>
+                            <Button 
+                            variant="raised" 
+                            color="primary" 
+                            className={classes.button}
+                            >Add Tenant</Button>
+                            </Link>
                         </Paper>
                     </Grid>
                 </Grid>
