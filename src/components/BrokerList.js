@@ -18,6 +18,7 @@ class BrokerList extends Component {
                 brok_list: response.data,
             })
         })
+        .catch(error => {console.log(error)})
     }
 
     showDataList() {

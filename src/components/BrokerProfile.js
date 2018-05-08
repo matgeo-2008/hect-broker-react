@@ -52,13 +52,19 @@ class BrokerProfile extends Component {
     }
 
     componentDidMount() {
+        const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTI1NTk3NzU2LCJqdGkiOiJlNzE2ZGU0ZmQyZmU0ZDgxYjQ3ZmMzNDhiYjYzNTg4NSIsInVzZXJfaWQiOjF9.lNhBOQfZeq1RLu9-P_NQyXDFeD8R8hgEBgHEwr_AQrQ'
         const { id } = this.props.match.params
-        axios.get("http://127.0.0.1:8000/api/broker/?q=" + id)
+        axios.get("http://127.0.0.1:8000/api/broker/?q=" + id, 
+                { headers:
+                {
+                    'Authorization': 'Bearer '+token,
+                }})
         .then(response => {
             this.setState({ 
-                broker : response.data 
+                broker : response.data
             })
         })
+        .catch(error => {console.log(error)})
     }
 
     otExpansionPanel(type) {
