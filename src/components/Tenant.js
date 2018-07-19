@@ -19,7 +19,7 @@ const styles = theme => ({
     },
 })
 
-class Home extends Component {
+class Tenant extends Component {
     constructor() {
         super()
         this.state = {
@@ -39,16 +39,12 @@ class Home extends Component {
                     <Grid item xs={12}>
                         <Paper className={classes.root} elevation={1}>
                             <Typography variant="headline" component="h3">
-                            A real estate payments network.
+                            Glenn Foronda Profile
                             </Typography>
                         </Paper>
                     </Grid>
                     <Grid item xs={3}>
-                        <Paper className={classes.paper}>
-                        <Link to="/tenant">
-                        For Tenants
-                        </Link>
-                        </Paper>
+                        <Paper className={classes.paper}>For Tenants</Paper>
                     </Grid>
                     <Grid item xs={3}>
                         <Paper className={classes.paper}>For Landlords</Paper>
@@ -65,8 +61,8 @@ class Home extends Component {
     }
 }
 
-Home.propTypes = {
+Tenant.propTypes = {
     classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(Home)
+export default withStyles(styles)(Tenant)
